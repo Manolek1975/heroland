@@ -1,10 +1,11 @@
-package com.delek.heroland
+package com.delek.heroland.ui.activity
 
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -14,6 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
+    private val mainViewModel: MainViewModel by viewModels()
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +28,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun initUI() {
         binding.textHome.blink()
+        binding.root.setOnClickListener {
+            mainViewModel.insertRoles()
+        }
     }
 
     private fun View.blink(
