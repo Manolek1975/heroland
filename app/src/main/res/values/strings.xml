@@ -3,4 +3,5 @@
     <string name="todo">TODO</string>
     <string name="text_main_button">Touch the screen</string>
     <string name="text_main_version">Version 1.0.0</string>
+    <string name="select_character">Select Character</string>
 </resources>

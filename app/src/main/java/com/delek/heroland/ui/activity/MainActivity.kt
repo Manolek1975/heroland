@@ -1,5 +1,6 @@
 package com.delek.heroland.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AlphaAnimation
@@ -30,7 +31,10 @@ class MainActivity : AppCompatActivity() {
         binding.textHome.blink()
         binding.root.setOnClickListener {
             mainViewModel.insertRoles()
+            val intent = Intent(this, RoleActivity::class.java)
+            startActivity(intent)
         }
+
     }
 
     private fun View.blink(

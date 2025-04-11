@@ -3,6 +3,7 @@ package com.delek.heroland.data.database.entities
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.delek.heroland.domain.model.Role
 
 
 @Entity(tableName = "roles")
@@ -21,6 +22,23 @@ data class RoleEntity(
     @ColumnInfo(name = "spells") val spells: Int,
     @ColumnInfo(name = "relations") val relations: Int,
     @ColumnInfo(name = "difficulty") val difficulty: String
+)
+
+fun Role.toDatabase() = RoleEntity(
+    id,
+    name,
+    symbol,
+    icon,
+    thumb,
+    image,
+    detail,
+    weight,
+    advantages,
+    development,
+    position,
+    spells,
+    relations,
+    difficulty
 )
 
 
